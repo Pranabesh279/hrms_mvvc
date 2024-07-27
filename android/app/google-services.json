@@ -1,0 +1,134 @@
+{
+  "project_info": {
+    "project_number": "483329949094",
+    "project_id": "eprovide-fa8a0",
+    "storage_bucket": "eprovide-fa8a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483329949094:android:f73f17f73533e07fada367",
+        "android_client_info": {
+          "package_name": "com.example.growit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "483329949094-vkie2ogjkl4feoqhq2rv03749q682d8p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWMUyUSGSVbd29DPgXjY1VUHWylEOdG14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "483329949094-vkie2ogjkl4feoqhq2rv03749q682d8p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "483329949094-caqtb8ej3b0n29ifvturgi1gdnb4arik.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "in.skykraft.SkyKraftUserApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483329949094:android:26046a7b180dd0e1ada367",
+        "android_client_info": {
+          "package_name": "com.trugotech.skyKraft"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "483329949094-4eimij4k0b769qf8eatvmain3j4sje1m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.trugotech.skyKraft",
+            "certificate_hash": "43ecd661ef5047d43073fcd2e68c11c49c6ea1e7"
+          }
+        },
+        {
+          "client_id": "483329949094-vkie2ogjkl4feoqhq2rv03749q682d8p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWMUyUSGSVbd29DPgXjY1VUHWylEOdG14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "483329949094-vkie2ogjkl4feoqhq2rv03749q682d8p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "483329949094-caqtb8ej3b0n29ifvturgi1gdnb4arik.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "in.skykraft.SkyKraftUserApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483329949094:android:346e9b0b0802870bada367",
+        "android_client_info": {
+          "package_name": "io.skyKraft.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "483329949094-7gd3om7rjd41hknedv9ika77hhtoeood.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.skyKraft.app",
+            "certificate_hash": "43ecd661ef5047d43073fcd2e68c11c49c6ea1e7"
+          }
+        },
+        {
+          "client_id": "483329949094-vkie2ogjkl4feoqhq2rv03749q682d8p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWMUyUSGSVbd29DPgXjY1VUHWylEOdG14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "483329949094-vkie2ogjkl4feoqhq2rv03749q682d8p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "483329949094-caqtb8ej3b0n29ifvturgi1gdnb4arik.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "in.skykraft.SkyKraftUserApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
