@@ -3,9 +3,9 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:get/get.dart';
-import 'package:growit/infrastructure/shared/widgets/fill_button.dart';
-import 'package:growit/infrastructure/shared/widgets/text_fields/email_field.dart';
-import 'package:growit/infrastructure/shared/widgets/text_fields/password_field.dart';
+import 'package:growit/shared/widgets/fill_button.dart';
+import 'package:growit/shared/widgets/text_fields/email_field.dart';
+import 'package:growit/shared/widgets/text_fields/password_field.dart';
 import 'package:growit/infrastructure/theme/colors_data.dart';
 
 import 'controllers/login.controller.dart';
@@ -30,9 +30,9 @@ class LoginScreen extends GetView<LoginController> {
                   children: [
                     Container(
                       alignment: Alignment.center,
-                      height: 40,
-                      width: 40,
-                      child: SvgPicture.asset('assets/Growpos Logo Shapes.svg'),
+                      height: 60,
+                      width: 60,
+                      child: SvgPicture.asset('assets/logo.svg'),
                     ),
                     const SizedBox(width: 10),
                     const Spacer(),
@@ -48,12 +48,19 @@ class LoginScreen extends GetView<LoginController> {
                 ),
                 const SizedBox(height: 5),
                 Text(
-                  'Enter your comany email.',
+                  'Enter your organization email.',
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                         color: Colors.grey,
                       ),
                 ),
                 const SizedBox(height: 20),
+                Text(
+                  'Enter your email',
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: kTextColor,
+                        fontSize: 12,
+                      ),
+                ),
                 EmailField(
                   controller: controller.emailController,
                 ),
@@ -77,8 +84,19 @@ class LoginScreen extends GetView<LoginController> {
                   () => controller.step.value == 1 &&
                           controller.isUserEmailExist.value
                       ? Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const SizedBox(height: 20),
+                            Text(
+                              'Password',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall
+                                  ?.copyWith(
+                                    color: kTextColor,
+                                    fontSize: 12,
+                                  ),
+                            ),
                             PasswoardField(
                               controller: controller.passwordController,
                               hintText: 'Password',
@@ -110,8 +128,19 @@ class LoginScreen extends GetView<LoginController> {
                   () => controller.step.value == 1 &&
                           !controller.isUserEmailExist.value
                       ? Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const SizedBox(height: 20),
+                            Text(
+                              'Password',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall
+                                  ?.copyWith(
+                                    color: kTextColor,
+                                    fontSize: 12,
+                                  ),
+                            ),
                             PasswoardField(
                               controller: controller.passwordController,
                               hintText: 'Password',
@@ -126,6 +155,16 @@ class LoginScreen extends GetView<LoginController> {
                               },
                             ),
                             const SizedBox(height: 20),
+                            Text(
+                              'Confirm password',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall
+                                  ?.copyWith(
+                                    color: kTextColor,
+                                    fontSize: 12,
+                                  ),
+                            ),
                             PasswoardField(
                               controller: controller.confirmPasswordController,
                               hintText: 'Confirm Password',

@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import 'package:growit/infrastructure/shared/services/auth_services.dart';
+import 'package:growit/infrastructure/services/auth_services.dart';
+import 'package:growit/infrastructure/services/avatar_service.dart';
 import 'package:growit/infrastructure/theme/theme_data.dart';
 
 import 'firebase_options.dart';
@@ -22,6 +23,7 @@ Future main() async {
 
 intilizeServices() async {
   await Get.putAsync(() async => AuthService());
+  await Get.putAsync(() async => AvatarService());
 }
 
 class Main extends StatelessWidget {

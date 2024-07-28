@@ -7,6 +7,7 @@ environment:
 
 dependencies:
   cupertino_icons: ^1.0.6
+  intl: ^0.17.0
   get: 4.6.6
   flutter:
     sdk: flutter
@@ -15,11 +16,26 @@ dependencies:
   google_fonts: ^6.2.1
   flutter_svg: ^2.0.10+1
   cloud_firestore: ^5.1.0
+  flutter_advanced_avatar: ^1.5.0
+  carousel_slider: ^4.2.1
+  entry: ^1.0.0
+  calendar_view: ^1.2.0
 
 dev_dependencies:
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
+  flutter_native_splash: ^2.4.0
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/splashhr.png
+  android_12:
+    color: "#ffffff"
+    image: assets/splashhr.png
+  android: true
+  ios: true
+  web: false
 
 flutter:
   uses-material-design: true
@@ -27,6 +43,5 @@ flutter:
   - assets/
   - assets/images/
   - assets/icons/
-  - assets/svg/
-  - assets/fonts/
+
 

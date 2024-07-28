@@ -4,7 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:growit/infrastructure/shared/services/auth_services.dart';
+import 'package:growit/infrastructure/navigation/routes.dart';
+import 'package:growit/infrastructure/repository/employee_repository.dart';
+import 'package:growit/infrastructure/services/auth_services.dart';
+import 'package:growit/model/user/employee_response.dart';
 
 class LoginController extends GetxController {
   RxBool isLoading = false.obs;
@@ -36,8 +39,9 @@ class LoginController extends GetxController {
     if (fromKey.currentState!.validate()) {
       isLoading.value = true;
       try {
-        await auth.signInWithEmailAndPassword(
+        final user = await auth.signInWithEmailAndPassword(
             emailController.text.trim(), passwordController.text.trim());
+        redirectPage(user?.uid);
       } catch (e) {
         log(e.toString());
       } finally {
@@ -50,12 +54,26 @@ class LoginController extends GetxController {
     if (fromKey.currentState!.validate()) {
       isLoading.value = true;
       try {
-        await auth.signUpWithEmailAndPassword(
+        final user = await auth.signUpWithEmailAndPassword(
             emailController.text.trim(), confirmPasswordController.text.trim());
+        redirectPage(user?.uid);
       } catch (e) {
         log(e.toString());
       } finally {
         isLoading.value = false;
+      }
+    }
+  }
+
+  Future<void> redirectPage(String? uuid) async {
+    if (uuid == null) return;
+    Employee? employee = await EmployeeRepository().getEmployeeById(uuid);
+    if (employee != null) {
+      if (employee.name != null) {
+        Get.offAllNamed(Routes.HOME, arguments: employee.toJson());
+      } else {
+        Get.offAllNamed(Routes.SETUP_PROFILE,
+            arguments: employee.orgnizationName);
       }
     }
   }
