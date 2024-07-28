@@ -25,12 +25,6 @@ class Nav {
       transition: Transition.fadeIn,
     ),
     GetPage(
-      name: Routes.USER_ATTENDANCE,
-      page: () => const UserAttendanceScreen(),
-      binding: UserAttendanceControllerBinding(),
-      transition: Transition.fadeIn,
-    ),
-    GetPage(
       name: Routes.SETUP_PROFILE,
       page: () => const SetupProfileScreen(),
       binding: SetupProfileControllerBinding(),
@@ -40,6 +34,16 @@ class Nav {
       name: Routes.VIEW_ATTENDANCE,
       page: () => const ViewAttendanceScreen(),
       binding: ViewAttendanceControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.REGISTER_FACE,
+      page: () => const RegisterFaceScreen(),
+      binding: RegisterFaceControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.AUTHENTICATE_FACE,
+      page: () => const AuthenticateFaceScreen(),
+      binding: AuthenticateFaceControllerBinding(),
     ),
   ];
 }
