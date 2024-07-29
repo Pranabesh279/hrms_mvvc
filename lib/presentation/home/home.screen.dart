@@ -5,6 +5,7 @@ import 'package:flutter_advanced_avatar/flutter_advanced_avatar.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:get/get.dart';
+import 'package:growit/infrastructure/navigation/routes.dart';
 import 'package:growit/infrastructure/services/auth_services.dart';
 import 'package:growit/infrastructure/theme/colors_data.dart';
 import 'package:growit/presentation/home/components/attendance_summery.dart';
@@ -127,15 +128,76 @@ class HomeScreen extends GetView<HomeController> {
           ),
         ),
       ),
-      body: const SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: Column(
           children: [
-            PunchingAttendance(),
-            SizedBox(
+            Obx(
+              () => controller.isFaceAuthRegistered.value
+                  ? Container()
+                  : Container(
+                      padding: const EdgeInsets.all(10),
+                      margin: const EdgeInsets.only(bottom: 10),
+                      decoration: BoxDecoration(
+                        color: Colors.orangeAccent.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Row(
+                        children: [
+                          const Icon(
+                            Icons.warning,
+                            color: Colors.orangeAccent,
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Expanded(
+                            child: Text(
+                              'Face authentication is not registered. Please register your face to enable face authentication.',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge
+                                  ?.copyWith(
+                                    color: Colors.orangeAccent,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 12,
+                                  ),
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () {
+                              Get.toNamed(
+                                Routes.REGISTER_FACE,
+                                arguments: controller.employee.value?.toJson(),
+                              );
+                            },
+                            borderRadius: BorderRadius.circular(60),
+                            child: Container(
+                              alignment: Alignment.center,
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 5),
+                              decoration: BoxDecoration(
+                                color: Colors.orangeAccent,
+                                borderRadius: BorderRadius.circular(60),
+                              ),
+                              child: const Text(
+                                'Register',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+            ),
+            const PunchingAttendance(),
+            const SizedBox(
               height: 10,
             ),
-            AttendanceSummery()
+            const AttendanceSummery(),
           ],
         ),
       ),

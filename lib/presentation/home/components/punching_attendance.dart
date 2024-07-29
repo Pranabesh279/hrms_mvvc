@@ -161,7 +161,7 @@ class PunchingAttendance extends GetView<HomeController> {
               Obx(
                 () => GestureDetector(
                   onTap: () {
-                    if (!controller.isPunchedOut) {
+                    if (!controller.isPunchedOut && controller.isPunchedIn) {
                       controller.punchOut();
                     }
                   },

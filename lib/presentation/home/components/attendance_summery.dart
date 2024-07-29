@@ -77,7 +77,7 @@ class AttendanceSummery extends GetView<HomeController> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
-                    'Total Hours Worked',
+                    'Total Spend Hours ',
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           color: Colors.grey,
                           fontWeight: FontWeight.bold,
